@@ -1,0 +1,43 @@
+body > *{
+    margin: auto;
+    text-align: center;
+}
+
+h1, h2, h3{
+    background-color: rgba(100, 100, 100, .3);
+}
+
+#redirectBtns{ margin: 10px; }
+
+#redirectBtns > *{ display:inline-block }
+
+#redirectBtns button{
+    padding: 4px;
+    text-decoration: none;
+    color: black;
+}
+
+form {
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+input, form button, select{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+form button{ margin: 10px auto; }
+
+#updated, #update-user:hover{ background-color: rgba(0, 0, 255, 0.1); }
+#deleted, #delete-user:hover{ background-color: rgba(255, 0, 0, 0.1); }
+
+#updated, #deleted{ text-align: center; }
