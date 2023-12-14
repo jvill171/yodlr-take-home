@@ -3,8 +3,35 @@
 <head>
   <meta charset=utf-8>
   <title>Yodlr Admin Page</title>
+  <link rel="stylesheet" href="./css/admin.css">
+  <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
-  List user data here
+  <div id="redirectBtns">
+    <a href="/index.html">
+      <button>Index Page</button>
+    </a>
+    <a href="/signup.html">
+      <button>Registration Page</button>
+    </a>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>State</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="userlist"></tbody>
+  </table>
+
+  <div id="profile"></div>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.6.2/dist/axios.min.js"></script>
+  <script src="js/admin.js"></script>
 </body>
 </html>
