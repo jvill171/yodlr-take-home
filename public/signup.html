@@ -3,15 +3,34 @@
 <head>
   <meta charset=utf-8>
   <title>Yodlr Registration Portal</title>
+  <link rel="stylesheet" href="./css/app.css">
 </head>
 <body>
+  <div id="redirectBtns">
+    <a href="/admin.html">
+      <button>Admin Page</button>
+    </a>
+    <a href="/index.html">
+      <button>Index Page</button>
+    </a>
+  </div>
   <h1>Yodlr Registration Portal</h1>
-  <form>
-    Email: <input type="email" name="email"></br>
+<form id="signupForm" action="/users" method="POST">
+
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName"></br>
+
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName"></br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"></br>
+    
     <button type="submit">Submit</button>
-  </form>
-  <p>
-    <a href="/admin.html">Admin Page</a>
-  </p>
+</form>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.6.2/dist/axios.min.js"></script>
+  <script src="js/signup.js"></script>
 </body>
 </html>
