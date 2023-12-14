@@ -7,6 +7,8 @@ var log = logger();
 var users = require('../init_data.json').data;
 var curId = _.size(users);
 
+const fs = require('fs')
+
 /* GET users listing. */
 router.get('/', function(req, res) {
   res.json(_.toArray(users));
@@ -14,14 +16,22 @@ router.get('/', function(req, res) {
 
 /* Create a new user */
 router.post('/', function(req, res) {
-  var user = req.body;
-  user.id = curId++;
-  if (!user.state) {
-    user.state = 'pending';
+  try{
+    console.log(`POSTING`)
+    var user = req.body;
+    user.id = curId++;
+    if (!user.state) {
+      user.state = 'pending';
+    }
+    users[user.id] = user;
+    log.info('Created user', user);
+    
+    const updatedData = JSON.stringify({ data: users });
+    fs.writeFileSync('init_data.json', updatedData);
+    res.json(user);
+  }catch(err){
+    next(err)
   }
-  users[user.id] = user;
-  log.info('Created user', user);
-  res.json(user);
 });
 
 /* Get a specific user by id */
